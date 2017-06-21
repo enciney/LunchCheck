@@ -11,14 +11,21 @@ function LunchCheckController ($scope){
 
 $scope.lunch = '' ;
 $scope.message = '' ;
+$scope.color = '';
 $scope.checkLunch = function(){
   var foodNum = calcFoodNumber($scope.lunch);
-  if (foodNum == 0)
+  if ($scope.lunch == ''){
     $scope.message = "Please enter data first";
-  else if(foodNum > 3)
+    $scope.color = {"color" : "red"} ;
+  }
+  else if(foodNum > 3){
     $scope.message = "Too much!";
-  else if(foodNum <= 3)
+    $scope.color = {"color" : "green"} ;
+  }
+  else if(foodNum <= 3){
     $scope.message = "Enjoy!";
+    $scope.color = {"color" : "green"} ;
+  }
 
 }
 
@@ -30,7 +37,7 @@ function calcFoodNumber(foods)
     console.log(foodElem.length);
   for(var i = 0 ; i<foodElem.length ; i++){
 
-    if(foodElem[i] && foodElem[i] != " " ){
+    if(checkEmpty(foodElem[i])){
       numOfFood++ ;
       console.log("ok");
 
@@ -38,6 +45,14 @@ function calcFoodNumber(foods)
   }
 
   return numOfFood ;
+}
+
+function checkEmpty(string)
+{
+    for(var i = 0 ; i < string.length ; i++)
+      if(string[i] && string[i] != " " )
+        return true ;
+    return false ;
 }
 
 

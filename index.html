@@ -5,17 +5,19 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
 
-    <title>HTML5 Custom Attributes</title>
+    <title>Lunch Check App</title>
   </head>
   <body ng-app="LunchCheck">
-    <h1>HTML5 Custom Attributes</h1>
+    <p>Please enter your lunch using comma: </p>
 
     <div id="target" ng-controller="LunchCheckController">
-    <input type = "text " ng-model = "lunch"></input>
-    <br>
-    <button type="button" ng-click="checkLunch()"><p>Check If Too Much</p></button>
+      <input type = "text " ng-model = "lunch"></input>
+      <br>
+      (Example : item1,item2,item3 also empty and space item is not valid as item )
+      <br><br>
+      <button type="button" ng-click="checkLunch()"><p>Check If Too Much</p></button>
 
-    <p ng-class = "getColor()"> {{message}}<p>
+      <p ng-style = "color" >{{message}}<p>
     </div>
 
   </body>
