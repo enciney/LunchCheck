@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <title>HTML5 Custom Attributes</title>
+  </head>
+  <body ng-app="LunchCheck">
+    <h1>HTML5 Custom Attributes</h1>
+
+    <div id="target" ng-controller="LunchCheckController">
+    <input type = "text " ng-model = "lunch"></input>
+    <br>
+    <button type="button" ng-click="checkLunch()"><p>Check If Too Much</p></button>
+
+    <p ng-class = "getColor()"> {{message}}<p>
+    </div>
+
+  </body>
+</html>
