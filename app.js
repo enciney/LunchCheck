@@ -34,13 +34,9 @@ function calcFoodNumber(foods)
   var numOfFood = 0;
   var foodElem = [];
   foodElem = foods.split(',');
-    console.log(foodElem.length);
   for(var i = 0 ; i<foodElem.length ; i++){
-
     if(checkEmpty(foodElem[i])){
       numOfFood++ ;
-      console.log("ok");
-
     }
   }
 
